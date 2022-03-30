@@ -12,7 +12,7 @@ import {
   useColorModeValue,
 } from "@chakra-ui/react";
 
-export default function SimpleCard() {
+export default function FormLogin() {
   return (
     <Flex
       minH={"100vh"}
@@ -46,8 +46,8 @@ export default function SimpleCard() {
                 align={"start"}
                 justify={"space-between"}
               >
-                <Checkbox color={"#F7FAFC"}>Remember me</Checkbox>
-                <Link color={"#52b788"}>Forgot password?</Link>
+                <Checkbox color={"#F7FAFC"}>Recordarme</Checkbox>
+                <Link color={"#52b788"}>Olvidaste tu contraseña?</Link>
               </Stack>
               <Button
                 bg={"#52b788"}
@@ -56,8 +56,18 @@ export default function SimpleCard() {
                   bg: "#2d6a4f",
                 }}
               >
-                Sign in
+                Ingresar
               </Button>
+              <Box>
+                <Link
+                  fontSize="16px"
+                  color={"#52b788"}
+                  as="em"
+                  fontWeight="semibold"
+                >
+                  ¿ No tienes una cuenta ? Registrate aqui !
+                </Link>
+              </Box>
             </Stack>
           </Stack>
         </Box>
