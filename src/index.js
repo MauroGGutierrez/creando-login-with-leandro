@@ -2,12 +2,14 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { ChakraProvider } from "@chakra-ui/react";
 import "./index.css";
-import App from "./App";
-import FormLogin from "./FormLogin";
+import Form from "./Form";
+// import App from "./App";
 ReactDOM.render(
-  <ChakraProvider>
-    {/* <App /> */}
-    <FormLogin />
-  </ChakraProvider>,
+  <React.StrictMode>
+    <ChakraProvider>
+      <Form />
+      {/* <App /> */}
+    </ChakraProvider>
+  </React.StrictMode>,
   document.getElementById("root")
 );
