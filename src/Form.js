@@ -13,15 +13,15 @@ import {
   Link,
   Text,
 } from "@chakra-ui/react";
-
+import Logo from "./Logo";
 function App() {
   return (
     <Formik
       initialValues={{ email: "", password: "" }}
       validationSchema={Yup.object({
-        email: Yup.string().email("invalid email").required("email required"),
+        email: Yup.string().email("Email invalido").required("Email requerido"),
         password: Yup.string()
-          .required("Password required")
+          .required("Contraseña requerida")
           .min(6, "Password is too short"),
       })}
       onSubmit={(values, actions) => {
@@ -34,24 +34,21 @@ function App() {
           <Stack spacing={2} mx={"auto"} maxW={"lg"} px={8}>
             <Box bgColor="#0d0e0e" rounded={"lg"} boxShadow={"lg"} p={8}>
               <Stack spacing={2}>
-                <Text
-                  fontSize="40px"
-                  color="#2daa55"
-                  fontWeight="bold"
-                  as="cite"
-                  textAlign={"center"}
-                >
-                  Logeate
-                </Text>
+                <Flex alignItems="center" flexDirection="column-reverse">
+                  <Text fontSize="40px" fontWeight="bold" as="cite">
+                    Logeate
+                  </Text>
+                  <Logo />
+                </Flex>
                 <form onSubmit={formik.handleSubmit}>
                   <FormControl id="email">
                     <FormLabel m="0" color="#999999">
                       Email address
                     </FormLabel>
-                    <Flex alignItems="baseline" gap={2}>
+                    <Flex alignItems="baseline" gap={4}>
                       <TextField
                         name="email"
-                        placeholder="enter email"
+                        placeholder="Ingrese su email"
                         type="email"
                       />
                       <EmailIcon />
@@ -61,11 +58,11 @@ function App() {
                     <FormLabel m="9px 0 0 0" color="#999999">
                       Password
                     </FormLabel>
-                    <Flex alignItems="baseline" gap={2}>
+                    <Flex alignItems="baseline" gap={4}>
                       <TextField
                         name="password"
                         type="password"
-                        placeholder="enter password"
+                        placeholder="Ingrese su contraseña"
                       />
                       <LockIcon />
                     </Flex>
@@ -85,7 +82,9 @@ function App() {
                     type="submit"
                     bgColor="#2daa55"
                     _hover={{
-                      bg: "#256146",
+                      // bg: "#256146",
+                      boxShadow: "0 0 6px green",
+                      bgColor: "#24c924",
                     }}
                   >
                     Ingresar
