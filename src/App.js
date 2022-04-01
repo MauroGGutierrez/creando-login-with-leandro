@@ -30,7 +30,7 @@ export default function FormLogin() {
               as="cite"
               textAlign={"center"}
             >
-              Logeate
+              Login
             </Text>
             <FormControl id="email">
               <FormLabel color={"#F7FAFC"}>Email address</FormLabel>

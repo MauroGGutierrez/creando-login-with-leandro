@@ -6,7 +6,7 @@ const Logo = () => {
     <Img
       w="60px"
       borderRadius="50%"
-      border="1.4px solid #4568a5"
+      border="2px solid #52b788"
       src={logo}
       alt="Logo"
     />

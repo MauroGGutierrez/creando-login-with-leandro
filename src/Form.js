@@ -32,10 +32,16 @@ function App() {
       {(formik) => (
         <Flex minH={"100vh"} align={"center"} justify={"center"}>
           <Stack spacing={2} mx={"auto"} maxW={"lg"} px={8}>
-            <Box bgColor="#0d0e0e" rounded={"lg"} boxShadow={"lg"} p={8}>
+            <Box bg={"#161a1d"} rounded={"lg"} p={8} boxShadow={"dark-lg"}>
               <Stack spacing={2}>
                 <Flex alignItems="center" flexDirection="column-reverse">
-                  <Text fontSize="40px" fontWeight="bold" as="cite">
+                  <Text
+                    fontSize="50px"
+                    fontWeight="bold"
+                    as="cite"
+                    color={"#52b788"}
+                    textShadow="3px 2px #22543D"
+                  >
                     Logeate
                   </Text>
                   <Logo />
@@ -50,8 +56,9 @@ function App() {
                         name="email"
                         placeholder="Ingrese su email"
                         type="email"
+                        color="#FFFFFF"
                       />
-                      <EmailIcon />
+                      <EmailIcon color={"#52b788"} />
                     </Flex>
                   </FormControl>
                   <FormControl id="password">
@@ -63,8 +70,9 @@ function App() {
                         name="password"
                         type="password"
                         placeholder="Ingrese su contraseña"
+                        color="#FFFFFF"
                       />
-                      <LockIcon />
+                      <LockIcon color={"#52b788"} />
                     </Flex>
                   </FormControl>
                   <Box
@@ -82,10 +90,10 @@ function App() {
                     type="submit"
                     bgColor="#2daa55"
                     _hover={{
-                      // bg: "#256146",
                       boxShadow: "0 0 6px green",
                       bgColor: "#24c924",
                     }}
+                    fontSize="20px"
                   >
                     Ingresar
                   </Button>
@@ -97,13 +105,13 @@ function App() {
                     justify={"space-between"}
                   >
                     <Link color="#999999" _hover={{ color: "white" }}>
-                      Olvidaste tu contraseña?
+                      ¿Olvidaste tu contraseña?
                     </Link>
                   </Stack>
                   <Box mt="2">
                     <Link
                       fontSize="16px"
-                      color="#f8d614"
+                      color={"#52b788"}
                       as="em"
                       fontWeight="semibold"
                     >
