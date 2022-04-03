@@ -1,4 +1,4 @@
-import { EmailIcon, LockIcon } from "@chakra-ui/icons";
+import { EmailIcon, LockIcon, ViewIcon } from "@chakra-ui/icons";
 import { Formik } from "formik";
 import * as Yup from "yup";
 import TextField from "./TextField";
@@ -14,7 +14,9 @@ import {
   Text,
 } from "@chakra-ui/react";
 import Logo from "./Logo";
+import { useState } from "react";
 function App() {
+  const [show, setShow] = useState(false);
   return (
     <Formik
       initialValues={{ email: "", password: "" }}
@@ -33,14 +35,14 @@ function App() {
         <Flex minH={"100vh"} align={"center"} justify={"center"}>
           <Stack spacing={2} mx={"auto"} maxW={"lg"} px={8}>
             <Box bg={"#161a1d"} rounded={"lg"} p={8} boxShadow={"dark-lg"}>
-              <Stack spacing={2}>
+              <Stack spacing={1}>
                 <Flex alignItems="center" flexDirection="column-reverse">
                   <Text
                     fontSize="50px"
                     fontWeight="bold"
                     as="cite"
                     color={"#52b788"}
-                    textShadow="3px 2px #22543D"
+                    textShadow="3px 2px #5a3f6c"
                   >
                     Logeate
                   </Text>
@@ -68,11 +70,15 @@ function App() {
                     <Flex alignItems="baseline" gap={4}>
                       <TextField
                         name="password"
-                        type="password"
+                        type={show ? "text" : "password"}
                         placeholder="Ingrese su contraseña"
                         color="#FFFFFF"
                       />
-                      <LockIcon color={"#52b788"} />
+                      <ViewIcon
+                        cursor="pointer"
+                        onClick={() => setShow(!show)}
+                      />
+                      {/* <LockIcon color={"#52b788"} /> */}
                     </Flex>
                   </FormControl>
                   <Box
@@ -108,7 +114,7 @@ function App() {
                       ¿Olvidaste tu contraseña?
                     </Link>
                   </Stack>
-                  <Box mt="2">
+                  <Box>
                     <Link
                       fontSize="16px"
                       color={"#52b788"}
