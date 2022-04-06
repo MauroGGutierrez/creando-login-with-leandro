@@ -1,4 +1,5 @@
 import { EmailIcon, LockIcon, ViewIcon } from "@chakra-ui/icons";
+import logo from "./images/fares.png";
 import { Formik } from "formik";
 import * as Yup from "yup";
 import TextField from "./TextField";
@@ -46,7 +47,9 @@ function App() {
                   >
                     Logeate
                   </Text>
-                  <Logo />
+                  <Box borderRadius="50%" border="2px solid #52b788">
+                    <Logo logo={logo} />
+                  </Box>
                 </Flex>
                 <form onSubmit={formik.handleSubmit}>
                   <FormControl id="email">
@@ -75,6 +78,7 @@ function App() {
                         color="#FFFFFF"
                       />
                       <ViewIcon
+                        color="white"
                         cursor="pointer"
                         onClick={() => setShow(!show)}
                       />
@@ -92,6 +96,7 @@ function App() {
                     Recordarme
                   </Box>
                   <Button
+                    color="white"
                     isFullWidth
                     type="submit"
                     bgColor="#2daa55"
