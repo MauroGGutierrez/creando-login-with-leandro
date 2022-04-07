@@ -1,6 +1,8 @@
 import { Img } from "@chakra-ui/react";
 import React from "react";
-const Logo = ({ logo }) => {
+import logo from "./images/fares-bgBlack.jpeg";
+
+const Logo = () => {
   return (
     <Img
       w="50px"
