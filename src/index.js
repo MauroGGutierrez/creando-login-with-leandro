@@ -4,11 +4,13 @@ import { ChakraProvider } from "@chakra-ui/react";
 import "./index.css";
 import NavbarAdmin from "./NavbarAdmin";
 import Form from "./Form";
+import Register from "./Register";
 // import App from "./App";
 ReactDOM.render(
   <React.StrictMode>
     <ChakraProvider>
-      <NavbarAdmin />
+      <Register />
+      {/* <NavbarAdmin /> */}
       {/* <Form /> */}
       {/* <App /> */}
     </ChakraProvider>
