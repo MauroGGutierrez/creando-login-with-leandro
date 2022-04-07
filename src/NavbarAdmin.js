@@ -1,5 +1,5 @@
 import { ChevronDownIcon, SettingsIcon, InfoIcon } from "@chakra-ui/icons";
-import { FaCamera, FaHome } from "react-icons/fa";
+import { FaCamera, FaHome, FaUsers } from "react-icons/fa";
 import { IoIosAddCircle } from "react-icons/io";
 import {
   Box,
@@ -21,34 +21,77 @@ const NavbarAdmin = () => {
     color: "white",
   };
   return (
-    <Box bgColor={" rgb(25,135,84)"} color="black" p="1rem">
+    <Box
+      bgGradient="linear(to-l, #1ca183,#4acf86)"
+      // bgColor={"#06d6a0"}
+      color="black"
+      p="1rem"
+    >
       <Container maxWidth="90%">
         <Flex justifyContent="space-between">
           <Flex gap={2}>
             <Logo />
-            <Heading fontWeight="bold" as="cite">
+            <Heading fontWeight="bold" as="cite" fontSize={"40px"}>
               Fares
             </Heading>
           </Flex>
           <Flex alignItems="center" gap={6}>
-            <Link _hover={hover} d="flex" alignItems="center" gap={1}>
+            <Link
+              _hover={{
+                fontWeight: "bold",
+                fontSize: "17px",
+                color: "#fdfffc",
+              }}
+              d="flex"
+              alignItems="center"
+              gap={1}
+              as="abbr"
+              fontWeight="semibold"
+            >
               <IoIosAddCircle />
               Crear Post
             </Link>
-            <Link _hover={hover} d="flex" alignItems="center" gap={1}>
+            <Link
+              _hover={{
+                fontWeight: "bold",
+                fontSize: "17px",
+                color: "#fdfffc",
+              }}
+              d="flex"
+              alignItems="center"
+              gap={1}
+              as="abbr"
+              fontWeight="semibold"
+            >
               <FaHome />
               Home
             </Link>
-            <Link _hover={hover} d="flex" alignItems="center" gap={1}>
+            <Link
+              _hover={{
+                fontWeight: "bold",
+                fontSize: "17px",
+                color: "#fdfffc",
+              }}
+              d="flex"
+              alignItems="center"
+              gap={1}
+              fontWeight="semibold"
+              as="abbr"
+            >
+              <FaUsers />
               Nosotros
             </Link>
             <Menu closeOnBlur>
               <MenuButton
-                p={"8px 10px"}
+                p={"8px 16px"}
                 transition="all 0.2s"
                 borderRadius="md"
-                bgColor="darkturquoise"
+                bgColor="#000000"
+                color="#2ec4b6"
+                fontSize={"17px"}
                 letterSpacing={0.5}
+                fontWeight="bold"
+                boxShadow="xl"
               >
                 Perfil
                 <ChevronDownIcon />
