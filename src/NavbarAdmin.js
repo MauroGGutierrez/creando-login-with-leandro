@@ -1,8 +1,9 @@
 import { ChevronDownIcon, SettingsIcon, InfoIcon } from "@chakra-ui/icons";
-import { FaCamera, FaHome, FaUsers } from "react-icons/fa";
+import { FaCamera, FaHome, FaUsers, FaWpforms } from "react-icons/fa";
 import { IoIosAddCircle } from "react-icons/io";
 import {
   Box,
+  Button,
   Container,
   Flex,
   Heading,
@@ -81,6 +82,13 @@ const NavbarAdmin = () => {
               <FaUsers />
               Nosotros
             </Link>
+            <Button
+              leftIcon={<FaWpforms />}
+              colorScheme="blackAlpha"
+              boxShadow="xl"
+            >
+              Subir CV
+            </Button>
             <Menu closeOnBlur>
               <MenuButton
                 p={"8px 16px"}
