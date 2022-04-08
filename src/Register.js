@@ -1,33 +1,39 @@
-import { EmailIcon, ViewIcon } from "@chakra-ui/icons";
 import { Formik } from "formik";
 import * as Yup from "yup";
 import TextField from "./TextField";
 import {
   Box,
   Button,
-  Checkbox,
+  // Checkbox,
   Flex,
   FormControl,
   FormLabel,
   Stack,
   Link,
   Text,
+  Heading,
 } from "@chakra-ui/react";
 import Logo from "./Logo";
+import { EmailIcon, ViewIcon, ViewOffIcon } from "@chakra-ui/icons";
+import { BsFillPersonFill } from "react-icons/bs";
 import { useState } from "react";
 function App() {
   const [show, setShow] = useState(false);
+
+  const active = {
+    transform: "scale(0.96)",
+  };
   return (
     <Formik
       initialValues={{ name: "", email: "", password: "" }}
       validationSchema={Yup.object({
         name: Yup.string()
           .min(3, "Nombre demasiado corto")
-          .required("Nombre es requerido"),
+          .required("Nombre requerido"),
         email: Yup.string().email("Email invalido").required("Email requerido"),
         password: Yup.string()
           .required("Contraseña requerida")
-          .min(6, "Password is too short"),
+          .min(6, "Contraseña corta"),
       })}
       onSubmit={(values, actions) => {
         alert(JSON.stringify(values, null, 2));
@@ -37,15 +43,15 @@ function App() {
       {(formik) => (
         <Flex minH={"100vh"} align={"center"} justify={"center"}>
           <Stack spacing={2} mx={"auto"} maxW={"lg"} px={8}>
-            <Box bg={"#161a1d"} rounded={"lg"} p={8} boxShadow={"dark-lg"}>
+            <Box bg={"#161a1d"} rounded={"lg"} p={6} boxShadow={"dark-lg"}>
               <Stack spacing={1}>
                 <Flex alignItems="center" flexDirection="column-reverse">
                   <Text
                     fontSize="40px"
                     fontWeight="bold"
                     as="cite"
-                    color={"#52b788"}
-                    textShadow="3px 2px black"
+                    color={"#4ce69f"}
+                    textShadow="3px 2px #443232"
                   >
                     ¡Bienvenido!
                   </Text>
@@ -54,95 +60,75 @@ function App() {
                   </Box>
                 </Flex>
                 <form onSubmit={formik.handleSubmit}>
-                  <FormControl id="email">
-                    <FormLabel m="0" color="#999999">
-                      Nombre
-                    </FormLabel>
+                  <FormControl mb={1} id="name">
                     <Flex alignItems="baseline" gap={4}>
                       <TextField
                         name="name"
-                        placeholder="Ingrese su nombre"
+                        placeholder="Nombre"
                         type="text"
                         color="#FFFFFF"
                       />
+                      <BsFillPersonFill color="#fff" />
                     </Flex>
-                    <FormLabel m="0" color="#999999">
-                      Correo Electronico
-                    </FormLabel>
+                  </FormControl>
+                  <FormControl mb={1} id="email">
                     <Flex alignItems="baseline" gap={4}>
                       <TextField
                         name="email"
-                        placeholder="Ingrese su email"
+                        placeholder="Correo electronico"
                         type="email"
                         color="#FFFFFF"
                       />
-                      {/* <EmailIcon color={"#52b788"} /> */}
+                      <EmailIcon color="#fff" />
                     </Flex>
                   </FormControl>
-                  <FormControl id="password">
-                    <FormLabel m="9px 0 0 0" color="#999999">
-                      Contraseña
-                    </FormLabel>
+                  <FormControl mb={3} id="password">
                     <Flex alignItems="baseline" gap={4}>
                       <TextField
                         name="password"
                         type={show ? "text" : "password"}
-                        placeholder="Ingrese su contraseña"
+                        placeholder="Contraseña"
                         color="#FFFFFF"
                       />
-                      {/* <ViewIcon
-                        color="white"
-                        cursor="pointer"
-                        onClick={() => setShow(!show)}
-                      /> */}
+                      <Box onClick={() => setShow(!show)}>
+                        {show ? (
+                          <ViewOffIcon
+                            _active={active}
+                            color="white"
+                            cursor="pointer"
+                          />
+                        ) : (
+                          <ViewIcon
+                            _active={active}
+                            color="white"
+                            cursor="pointer"
+                          />
+                        )}
+                      </Box>
                     </Flex>
                   </FormControl>
-                  {/* <Box
-                    m="13px 0"
-                    _hover={{ color: "white" }}
-                    color="#999999"
-                    name="rememberMe"
-                    as={Checkbox}
-                    id="rememberMe"
-                  >
-                    Recordarme
-                  </Box> */}
                   <Button
-                    mt={4}
+                    mt={1.5}
                     color="white"
                     isFullWidth
                     type="submit"
-                    bgColor="#2daa55"
-                    _hover={{
-                      boxShadow: "0 0 6px green",
-                      bgColor: "#24c924",
-                    }}
-                    fontSize="20px"
+                    h="35px"
+                    bgColor="#24c924"
+                    _active={active}
+                    _hover={{ boxShadow: "0 0 3px green" }}
                   >
-                    Registrarme
+                    Registrarse
                   </Button>
                 </form>
-                <Stack spacing={5}>
-                  {/* <Stack
-                    direction={{ base: "column", sm: "row" }}
-                    align={"start"}
-                    justify={"space-between"}
-                  >
-                    <Link color="#999999" _hover={{ color: "white" }}>
-                      ¿Olvidaste tu contraseña?
-                    </Link>
-                  </Stack> */}
-                  <Box>
-                    <Link
-                      fontSize="16px"
-                      color={"#52b788"}
-                      as="em"
-                      fontWeight="semibold"
-                    >
-                      ¿Ya tienes una cuenta? Inicia Sesion aquí!
-                    </Link>
-                  </Box>
-                </Stack>
+                <Box
+                  mt={3}
+                  fontSize="16px"
+                  color={"#1b74e4"}
+                  as="em"
+                  fontWeight="semibold"
+                >
+                  <Link>Iniciar Sesion</Link>
+                </Box>
               </Stack>
             </Box>
           </Stack>

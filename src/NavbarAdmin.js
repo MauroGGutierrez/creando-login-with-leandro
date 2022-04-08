@@ -18,9 +18,9 @@ import React from "react";
 import Logo from "./Logo";
 
 const NavbarAdmin = () => {
-  const hover = {
-    color: "white",
-  };
+  // const hover = {
+  //   color: "white",
+  // };
   return (
     <Box
       bgGradient="linear(to-l, #1ca183,#4acf86)"
