@@ -5,7 +5,6 @@ import TextField from "./TextField";
 import {
   Box,
   Button,
-  Checkbox,
   Flex,
   FormControl,
   FormLabel,
